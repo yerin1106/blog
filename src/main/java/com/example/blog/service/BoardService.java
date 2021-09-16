@@ -54,9 +54,16 @@ public class BoardService {
                 .author(board.getAuthor())
                 .title(board.getTitle())
                 .content(board.getContent())
+                .fileId(board.getFileId())
                 .createdDate(board.getCreatedDate())
                 .build();
         return boardDto;
+    }
+
+    // 삭제
+    @Transactional
+    public void deletePost(Long id){
+        boardRepository.deleteById(id);
     }
 
 }

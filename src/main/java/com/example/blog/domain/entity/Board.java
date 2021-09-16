@@ -35,6 +35,9 @@ public class Board {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
+    @Column
+    private Long fileId;
+
     @CreatedDate //Entity가 생성되어 저장될 때 시간이 자동 저장
     @Column(updatable = false)
     private LocalDateTime createdDate;
@@ -44,11 +47,11 @@ public class Board {
 
     //객체를 생성하기 위한 패턴(생성자, 수정자, 빌더 패턴 있음)
     @Builder //모델 객체를 생성할 때 Builder를 자동으로 추가
-    public Board(Long id, String author, String title, String content){
+    public Board(Long id, String author, String title, String content, Long fileId){
         this.id = id;
         this.author = author;
         this.title = title;
         this.content = content;
+        this.fileId = fileId;
     }
-
 }
