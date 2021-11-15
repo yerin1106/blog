@@ -5,6 +5,7 @@ import com.example.blog.dto.FileDto;
 import com.example.blog.service.BoardService;
 import com.example.blog.service.FileService;
 import com.example.blog.util.MD5Generator;
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.io.File;
 import java.util.List;
 
 // controller는 사용자의 HTTP 요청이 진입하는 지점, 사용자에게 서버에서 처리된 데이터를 View와 함께 응답하게 해준다.
+@Api(tags = {"Blog API"})
 @Controller
 public class BoardController {
     private BoardService boardService;
